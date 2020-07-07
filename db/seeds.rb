@@ -7,5 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-user = User.create(email:'admin@purelife.com', first_name:'Admin', last_name:'Nimda', password: '123456', password_confirmation: '123456')
+user = User.create(email:'admin@purelife.com', first_name:'Admin', last_name:'Nimda', password: '123456', password_confirmation: '123456', is_admin: true)
 

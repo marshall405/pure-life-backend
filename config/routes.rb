@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   
   resources :users
 
+  post '/auth/login', to: 'authentication#authenticate'
+
+  post '/signup', to: 'users#create'
+
   get '/posts', to: 'posts#index'
   post '/posts', to: 'posts#create'
   put '/posts/:id', to: 'posts#update'
