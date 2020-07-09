@@ -9,3 +9,11 @@
 
 user = User.create(email:'admin@purelife.com', first_name:'Admin', last_name:'Nimda', password: '123456', password_confirmation: '123456', is_admin: true)
 
+
+bryan = Provider.create(first_name: "Bryan", last_name: "Haney")
+sickly = Patient.create(first_name: "Sickly")
+
+bryan.appointments.create(patient_id: sickly.id)
+
+
+
