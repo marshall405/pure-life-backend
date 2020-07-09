@@ -5,4 +5,9 @@ class User < ApplicationRecord
     validates :last_name, presence: true
     validates :password, presence: true, length: {minimum: 6}
     has_secure_password
+
+    enum role: [:patient, :provider]
+
+    belongs_to :provider, optional: true
+    belongs_to :patient, optional: true
 end

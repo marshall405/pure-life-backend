@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_08_205346) do
+ActiveRecord::Schema.define(version: 2020_07_09_190709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,10 +24,8 @@ ActiveRecord::Schema.define(version: 2020_07_08_205346) do
   end
 
   create_table "patients", force: :cascade do |t|
-    t.string "email"
     t.string "first_name"
     t.string "last_name"
-    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -42,10 +40,8 @@ ActiveRecord::Schema.define(version: 2020_07_08_205346) do
   end
 
   create_table "providers", force: :cascade do |t|
-    t.string "email"
     t.string "first_name"
     t.string "last_name"
-    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -67,6 +63,9 @@ ActiveRecord::Schema.define(version: 2020_07_08_205346) do
     t.boolean "is_admin", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "role"
+    t.integer "patient_id"
+    t.integer "provider_id"
   end
 
   add_foreign_key "posts", "users"
