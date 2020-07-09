@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_07_004754) do
+ActiveRecord::Schema.define(version: 2020_07_08_205346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.integer "provider_id"
+    t.integer "patient_id"
+    t.string "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string "email"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -22,6 +39,24 @@ ActiveRecord::Schema.define(version: 2020_07_07_004754) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "providers", force: :cascade do |t|
+    t.string "email"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "timeslots", force: :cascade do |t|
+    t.integer "provider_id"
+    t.integer "day"
+    t.integer "hour"
+    t.boolean "available", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
