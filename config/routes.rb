@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   
   patch '/timeslots/:id', to: 'timeslots#update'
 
+  get '/appointments', to: 'appointments#index'
   post '/appointments', to: 'appointments#create'
   delete '/appointments/:id', to: 'appointments#destroy'
    
