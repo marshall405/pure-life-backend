@@ -15,8 +15,6 @@ class AuthenticateUser
     def user
         user = User.find_by(email: email)
         return user if user && user.authenticate(password)
-
-        raise('invalid creds')
     end
 
 
