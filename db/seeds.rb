@@ -8,19 +8,23 @@
 
 
 
+        # Providers
 michael = Provider.create(first_name: "Michael", last_name: "Wilson")
-
 user = User.create(email:'admin@purelife.com', first_name:'Admin', last_name:'Nimda', 
         password: '123456', password_confirmation: '123456', is_admin: true, role: 1, provider_id: michael.id)
 
 
 
 
+        # Patients
 sickly = Patient.create(first_name: "Sickly", last_name: 'McSickFace')
-
 user = User.create(email: 'sickly@sickmail.com', first_name: 'Sickly', last_name: 'McSickFace', 
         password: '123456', password_confirmation: '123456', is_admin: false, role: 0, patient_id: sickly.id)
 
+
+rocky = Patient.create(first_name: "Rocky", last_name: 'BrokeArm')
+user = User.create(email: 'rocky@sickmail.com', first_name: 'Rocky', last_name: 'BrokeArm', 
+        password: '123456', password_confirmation: '123456', is_admin: false, role: 0, patient_id: rocky.id)        
 
 
 

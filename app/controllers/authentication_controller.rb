@@ -6,7 +6,6 @@ class AuthenticationController < ApplicationController
             user = User.find_by(email: auth_params[:email])
             render json: {
                 user: user,
-                appointments: user.appointments,
                 auth_token: auth_token,
             }
         else
