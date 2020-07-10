@@ -15,5 +15,9 @@ Rails.application.routes.draw do
   
   patch '/timeslots/:id', to: 'timeslots#update'
    
+
+  get '/appointments', to: 'appointments#appointments'
+
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
