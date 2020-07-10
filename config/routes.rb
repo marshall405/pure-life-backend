@@ -22,5 +22,9 @@ Rails.application.routes.draw do
   post '/appointments', to: 'appointments#create'
   delete '/appointments/:id', to: 'appointments#destroy'
    
+
+  get '/appointments', to: 'appointments#appointments'
+
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
