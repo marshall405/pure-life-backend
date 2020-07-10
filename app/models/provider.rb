@@ -9,7 +9,6 @@ class Provider < ApplicationRecord
                 self.timeslots.create(day: day, hour: hour)
             end
         end
-        print "\n\n\n    Testing.... \n\n#{self.timeslots}\n\n\n\n"
     end
     
 end
