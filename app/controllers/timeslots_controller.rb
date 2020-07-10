@@ -4,7 +4,7 @@ class TimeslotsController < ApplicationController
     def update
         timeslot = Timeslot.find_by(id: params[:id])
         timeslot.update(available: params[:available])
-        render json: timeslot
+        render json: timeslot, except: [:created_at, :updated_at]
     end
 
 end

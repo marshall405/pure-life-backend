@@ -24,7 +24,4 @@ user = User.create(email: 'sickly@sickmail.com', first_name: 'Sickly', last_name
 
 
 
-michael.appointments.create(patient_id: sickly.id)
-
-
 
